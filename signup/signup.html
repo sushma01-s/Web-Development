@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="signup.css">
+  </head>
+  <body>
+    <form action="sign.php" method="POST">
+    <script>
+      function vali(){
+        var a =document.getElementById("password").value;
+        var b =document.getElementById("confirmpassword").value;
+        if(a.length<5){
+          document.getElementById("messages").innerHTML="** password length should be greater than 5";
+          return false;
+        }
+        if(a!=b){
+          document.getElementById("messagess").innerHTML="** password and confirm password not matching";
+          return false;
+        }
+      }
+    </script>
+    <div class="user">
+      <header class="user__header">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+          <h1 class="user__title">Registration form</h1>
+      </header>
+      
+      <form onsubmit="return vali()">
+       <p class="form">
+        
+          <div class="form__group">
+              <input type="text" placeholder="First name" class="form__input" required/><br>
+          </div>
+
+          <div class="form__group">
+            <input type="text" placeholder="last name" class="form__input" required/><br>
+        </div>
+          
+          <div class="form__group">
+              <input type="email" placeholder="Email" class="form__input" required /><br>
+          </div>
+          
+          <div class="form__group">
+              <input type="password" placeholder="Password" id ="password" class="form__input" value="" required/><br>
+          <span id="messages" style="color: red;"></span><br><br>
+            </div>
+          <div class="form__group">
+            <input type="password" placeholder="confirm Password" id="confirmpassword" class="form__input" value=""required /><br>
+            <span id="messagess" style="color: red;"></span><br><br> 
+          </div>
+           <label> Gender </label>
+<div class="radio-block">
+  <div class="radio-content">
+    <input id="radio1" type="radio" name="radio" value="M" checked />
+    <label for="radio1" > Male</label>
+    </div><br>
+  <div class="radio-content">
+    <input id="radio2" type="radio" value="F" name="radio" />
+    <label for="radio2">Female</label>
+  </div><br>
+ 
+</div><br>
+<div class="form__group">
+  <input type="number" placeholder="Age" min="18" max="90" class="form__input" required/><br>
+</div>
+          <input type ="submit" class="btn" value="submit">
+</p>
+    </form> 
+ 
+  </div>
+</form> 
+  </body>
+</html>
